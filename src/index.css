@@ -1,8 +1,18 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --background: #0b1120;
+  --surface: #111827;
+  --border: #1f2937;
 
-  color: #f8fafc;
-  background-color: #0b1120;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+
+  --accent: #38bdf8;
+
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+
+  color: var(--text);
+  background: var(--background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -12,8 +22,330 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* Navbar */
+
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Hero */
+
+.hero {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 16px;
+}
+
+.hero h2 {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.hero p {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hero-badge {
+  display: inline-block;
+  width: fit-content;
+
+  padding: 8px 16px;
+  margin-bottom: 24px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--muted);
+  font-size: 0.9rem;
+
+  background: var(--surface);
+}
+
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+
+.hero-buttons a {
+  padding: 12px 24px;
+
+  border-radius: 8px;
+
+  border: 1px solid var(--border);
+
+  transition: 0.3s;
+}
+
+
+.hero-buttons a:first-child {
+  background: var(--accent);
+  color: #0b1120;
+}
+
+
+.hero-buttons a:hover {
+  transform: translateY(-3px);
+}
+
+/* About */
+
+.about h2,
+#projects h2,
+#skills h2,
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 32px;
+}
+
+
+.about p {
+  max-width: 750px;
+
+  color: var(--muted);
+
+  font-size: 1.1rem;
+
+  line-height: 1.8;
+
+  margin-bottom: 16px;
+}
+
+/* Proyects */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+
+  gap: 24px;
+}
+
+
+.project-card {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  padding: 24px;
+
+  transition: 0.3s;
+}
+
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+
+.project-card h3 {
+  margin-top: 0;
+
+  font-size: 1.3rem;
+}
+
+
+.project-card p {
+  color: var(--muted);
+
+  line-height: 1.6;
+}
+
+
+.technologies {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin: 20px 0;
+}
+
+
+.technologies span {
+  background: #1e293b;
+
+  color: var(--accent);
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 0.85rem;
+}
+
+
+.project-links {
+  display: flex;
+
+  gap: 16px;
+}
+
+
+.project-links a {
+  color: var(--accent);
+}
+
+/* Skills */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  );
+
+  gap: 24px;
+}
+
+
+.skill-card {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  padding: 24px;
+}
+
+
+.skill-card h3 {
+  margin-top: 0;
+
+  margin-bottom: 20px;
+}
+
+
+.skill-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+
+.skill-list span {
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: #1e293b;
+
+  color: var(--text);
+
+  font-size: 0.9rem;
+}
+
+/* Contact */
+
+.contact {
+  text-align: center;
+  padding-bottom: 120px;
+}
+
+
+.contact p {
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto 32px;
+
+  line-height: 1.6;
+}
+
+
+.contact-links {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 16px;
+
+  flex-wrap: wrap;
+}
+
+
+.contact-links a {
+  padding: 12px 24px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  transition: 0.3s;
+}
+
+
+.contact-links a:hover {
+  border-color: var(--accent);
+
+  color: var(--accent);
+
+  transform: translateY(-3px);
 }
