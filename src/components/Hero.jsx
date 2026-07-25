@@ -1,7 +1,10 @@
+import foto_cv from "../assets/foto_cv.jpeg"
+
 function Hero() {
   return (
     <section className="hero">
 
+     <div className="hero-content">
       <span className="hero-badge">
         👩‍💻 Estudiante de Ingeniería en Computación
       </span>
@@ -22,7 +25,7 @@ function Hero() {
 
       <div className="hero-buttons">
         <a 
-          href="https://github.com/"
+          href="https://github.com/ximehe"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -30,12 +33,20 @@ function Hero() {
         </a>
 
         <a 
-          href="https://linkedin.com/"
+          href="https://www.linkedin.com/in/ximehernandez/"
           target="_blank"
           rel="noopener noreferrer"
         >
           LinkedIn
         </a>
+        </div>
+      </div>
+
+      <div className="hero-image">
+        <img 
+          src={foto_cv}
+          alt="Foto de Ximena"
+        />
       </div>
 
     </section>

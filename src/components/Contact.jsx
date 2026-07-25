@@ -11,12 +11,12 @@ function Contact() {
 
       <div className="contact-links">
 
-        <a href="mailto:tuemail@gmail.com">
+        <a href="ximemika25@gmail.com">
           Email
         </a>
 
         <a
-          href="https://github.com/"
+          href="https://github.com/ximehe"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -24,7 +24,7 @@ function Contact() {
         </a>
 
         <a
-          href="https://linkedin.com/"
+          href="https://www.linkedin.com/in/ximehernandez/"
           target="_blank"
           rel="noopener noreferrer"
         >

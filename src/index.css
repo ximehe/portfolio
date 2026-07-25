@@ -43,6 +43,26 @@ section {
   padding: 80px 24px;
 }
 
+section h2 {
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+
+  display: block;
+
+  width: 50px;
+
+  height: 3px;
+
+  background: var(--accent);
+
+  margin-top: 12px;
+
+  border-radius: 10px;
+}
+
 /* Navbar */
 
 .navbar {
@@ -53,6 +73,14 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 10;
+
+  background: rgba(11, 17, 32, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .navbar h2 {
@@ -80,8 +108,29 @@ section {
   min-height: 70vh;
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+
+.hero-image img {
+  width: 280px;
+
+  height: 280px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid var(--accent);
 }
 
 .hero h1 {
@@ -348,4 +397,61 @@ section {
   color: var(--accent);
 
   transform: translateY(-3px);
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+
+  padding: 32px 24px;
+
+  color: var(--muted);
+
+  border-top: 1px solid var(--border);
+
+  font-size: 0.9rem;
+}
+
+/* Responsive básico */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero {
+  flex-direction: column-reverse;
+
+  text-align: center;
+  }
+
+
+  .hero-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+
+  .hero-image img {
+    width: 220px;
+
+    height: 220px;
+  }
+
 }
