@@ -1,8 +1,10 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { FiMail } from "react-icons/fi"
+import Reveal from "./Reveal"
 
 function Contact() {
   return (
+  <Reveal>
     <section id="contact" className="contact">
 
       <h2>Contacto</h2>
@@ -40,6 +42,7 @@ function Contact() {
       </div>
 
     </section>
+  </Reveal>
   )
 }
 

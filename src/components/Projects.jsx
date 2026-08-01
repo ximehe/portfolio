@@ -1,24 +1,27 @@
 import projects from "../data/projects"
 import ProjectCard from "./ProjectCard"
+import Reveal from "./Reveal"
 
 function Projects() {
   return (
-    <section id="projects">
+    <Reveal>
+      <section id="projects">
 
-      <h2>Proyectos</h2>
+        <h2>Proyectos</h2>
 
-      <div className="projects-grid">
+        <div className="projects-grid">
 
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-          />
-        ))}
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+            />
+          ))}
 
-      </div>
+        </div>
 
-    </section>
+      </section>
+    </Reveal>
   )
 }
 

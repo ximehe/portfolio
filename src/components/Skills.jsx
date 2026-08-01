@@ -7,6 +7,7 @@ import {
   FaGithub,
 } from "react-icons/fa"
 import { SiVite, SiCplusplus } from "react-icons/si"
+import Reveal from "./Reveal"
 
 function Skills() {
   const skillGroups = [
@@ -38,6 +39,8 @@ function Skills() {
   ]
 
   return (
+
+  <Reveal>
     <section id="skills">
 
       <h2>Skills</h2>
@@ -77,6 +80,7 @@ function Skills() {
       </div>
 
     </section>
+  </Reveal>
   )
 }
 

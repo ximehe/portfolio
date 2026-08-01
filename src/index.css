@@ -121,7 +121,6 @@ section h2::after {
 
 /* ---------------------------- Hero -----------------------------*/
 
-
 .hero {
   min-height: 70vh;
 
@@ -142,6 +141,12 @@ section h2::after {
   font-size: 1.1rem;
 
   margin-bottom: 12px;
+
+  opacity: 0;
+  transform: translateY(60px);
+
+  animation: heroReveal 0.9s ease forwards;
+  animation-delay: 0.1s;
 }
 
 .hero h1 {
@@ -150,6 +155,12 @@ section h2::after {
   font-size: clamp(3rem, 5vw, 4rem);
 
   line-height: 1.1;
+
+  opacity: 0;
+  transform: translateY(60px);
+
+  animation: heroReveal 0.9s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .hero h1 span {
@@ -164,6 +175,12 @@ section h2::after {
   line-height: 1.5;
 
   font-weight: 500;
+
+  opacity: 0;
+  transform: translateY(60px);
+
+  animation: heroReveal 0.9s ease forwards;
+  animation-delay: 0.3s;
 }
 
 .hero-description {
@@ -174,6 +191,12 @@ section h2::after {
   line-height: 1.8;
 
   margin-top: 24px;
+
+  opacity: 0;
+  transform: translateY(60px);
+
+  animation: heroReveal 0.9s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .hero-buttons {
@@ -182,6 +205,12 @@ section h2::after {
   gap: 16px;
 
   margin-top: 32px;
+
+  opacity: 0;
+  transform: translateY(60px);
+
+  animation: heroReveal 0.9s ease forwards;
+  animation-delay: 0.5s;
 }
 
 .primary-button {
@@ -216,6 +245,12 @@ section h2::after {
   margin-top: 24px;
 
   color: var(--muted);
+
+  opacity: 0;
+  transform: translateY(60px);
+
+  animation: heroReveal 0.9s ease forwards;
+  animation-delay: 0.6s;
 }
 
 .hero-links a {
@@ -251,7 +286,31 @@ section h2::after {
 
   border: 1px solid var(--border);
 
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 60px rgba(56, 189, 248, 0.3);
+
+  opacity: 0;
+
+  animation: heroImageReveal 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageReveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 /* ------------------------------------ About ------------------------------------ */
 
@@ -583,6 +642,20 @@ footer {
   border-top: 1px solid var(--border);
 
   font-size: 0.9rem;
+}
+/* --------------------------- Scroll animations --------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* --------------------------------- Responsive ----------------------------*/
