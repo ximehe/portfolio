@@ -1,3 +1,6 @@
+import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { FiMail } from "react-icons/fi"
+
 function Contact() {
   return (
     <section id="contact" className="contact">
@@ -11,7 +14,8 @@ function Contact() {
 
       <div className="contact-links">
 
-        <a href="ximemika25@gmail.com">
+        <a href="mailto:ximemika25@gmail.com">
+          <FiMail />
           Email
         </a>
 
@@ -20,6 +24,7 @@ function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          <FaGithub />
           GitHub
         </a>
 
@@ -28,6 +33,7 @@ function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          <FaLinkedin />
           LinkedIn
         </a>
 

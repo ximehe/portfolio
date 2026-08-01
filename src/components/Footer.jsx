@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer>
       <p>
-        © 2026 Ximena. Construido con React.
+        © 2026 Ximena Hernández · Construido con React
       </p>
     </footer>
   )

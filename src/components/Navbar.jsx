@@ -1,7 +1,10 @@
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2>Ximena</h2>
+
+      <a href="#" className="navbar-logo">
+        Ximena Hernández
+      </a>
 
       <div className="nav-links">
         <a href="#about">Sobre mí</a>
@@ -9,6 +12,7 @@ function Navbar() {
         <a href="#skills">Skills</a>
         <a href="#contact">Contacto</a>
       </div>
+
     </nav>
   )
 }
