@@ -20,6 +20,12 @@ function ProjectCard({ project }) {
     
     <article className="project-card">
 
+      {project.status === "in-progress" && (
+        <span className="project-status">
+          En proceso
+        </span>
+      )}
+
       {project.image && (
         <div className="project-image-container">
 

@@ -19,6 +19,8 @@ const projects = [
     github: "#",
 
     demo: "#",
+
+    status: "in-progress",
   },
 
   {

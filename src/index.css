@@ -463,6 +463,9 @@ section h2::after {
 }
 
 .project-card {
+
+  position: relative;
+  
   background: rgba(17, 24, 39, 0.45);
 
   border: 1px solid rgba(148, 163, 184, 0.12);
@@ -680,6 +683,31 @@ section h2::after {
 
 .project-links svg {
   font-size: 1rem;
+}
+
+.project-status {
+  position: absolute;
+
+  top: 18px;
+  right: -34px;
+
+  padding: 6px 40px;
+
+  background: var(--accent);
+
+  color: #0b1120;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  transform: rotate(45deg);
+
+  box-shadow:
+    0 4px 15px rgba(56, 189, 248, 0.25);
+
+  z-index: 2;
 }
 
 /* -------------------------------- Skills --------------------------------------*/
