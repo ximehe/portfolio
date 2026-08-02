@@ -1,5 +1,6 @@
 import weather from "../assets/projects/weather-app.png"
 import guess from "../assets/projects/guess-number.gif"
+import fingride from "../assets/projects/fing-ride.png"
 
 const projects = [
   {
@@ -16,9 +17,10 @@ const projects = [
 
     image: weather,
 
-    github: "#",
+    repository: "https://github.com/ximehe/bo-clima",
+    repositoryType: "github",
 
-    demo: "#",
+    demo: "https://bo-clima.vercel.app/",
 
     status: "in-progress",
   },
@@ -39,18 +41,19 @@ const projects = [
 
     image: guess,
 
-    github: "#",
+    repository: "https://github.com/ximehe/numFounder",
+    repositoryType: "github",
 
-    demo: "#",
+    demo: null,
   },
 
   {
     id: 3,
 
-    title: "Programación 4",
+    title: "Fing Ride Sharing©",
 
     description:
-      "Proyecto académico desarrollado en C++ para la gestión de usuarios y viajes, aplicando programación orientada a objetos, estructuras de datos y patrones de diseño.",
+      "Proyecto académico hecho en equipo desarrollado en C++ para la gestión de usuarios y viajes, aplicando programación orientada a objetos, estructuras de datos y patrones de diseño.",
 
     technologies: [
       "C++",
@@ -58,11 +61,12 @@ const projects = [
       "Git",
     ],
 
-    image: "",
+    image: fingride,
 
-    github: "#",
+    repository: "https://gitlab.fing.edu.uy/santiago.montero/aplicacion-de-gestion-de-viajes-c",
+    repositoryType: "gitlab",
 
-    demo: "#",
+    demo: null,
   },
 ]
 

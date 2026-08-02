@@ -1,4 +1,4 @@
-import { FaGithub, FaReact, FaJs, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa"
+import { FaGithub, FaGitlab, FaReact, FaJs, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa"
 import { FiExternalLink } from "react-icons/fi"
 import { SiVite, SiCplusplus} from "react-icons/si"
 
@@ -26,6 +26,7 @@ function ProjectCard({ project }) {
         </span>
       )}
 
+
       {project.image && (
         <div className="project-image-container">
 
@@ -37,23 +38,27 @@ function ProjectCard({ project }) {
 
           <div className="project-overlay">
 
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub />
-              GitHub
-            </a>
+            {project.repository && (
+              <a
+                href={project.repository}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.repositoryType === "gitlab" ? <FaGitlab /> : <FaGithub />}
+                {project.repositoryType === "gitlab" ? "GitLab" : "GitHub"}
+              </a>
+            )}
 
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiExternalLink />
-              Demo
-            </a>
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiExternalLink />
+                Demo
+              </a>
+            )}
 
           </div>
 
@@ -78,23 +83,27 @@ function ProjectCard({ project }) {
       {!project.image && (
       <div className="project-links">
 
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub />
-          GitHub
-        </a>
+          {project.repository && (
+            <a
+              href={project.repository}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.repositoryType === "gitlab" ? <FaGitlab /> : <FaGithub />}
+              {project.repositoryType === "gitlab" ? "GitLab" : "GitHub"}
+            </a>
+          )}
 
-        <a
-          href={project.demo}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FiExternalLink />
-          Demo
-        </a>
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FiExternalLink />
+              Demo
+            </a>
+          )}
 
       </div>
       )}

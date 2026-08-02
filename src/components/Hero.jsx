@@ -29,7 +29,7 @@ function Hero() {
       <div className="hero-buttons">
 
         <a
-            href="/cv-ximena-hernandez.pdf"
+            href="/Ximena_Hernandez_IT_CV.pdf"
             download
             className="primary-button"
           >
