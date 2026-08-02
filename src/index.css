@@ -689,9 +689,11 @@ section h2::after {
   position: absolute;
 
   top: 18px;
-  right: -34px;
+  right: -40px;
 
-  padding: 6px 40px;
+  width: 150px;
+
+  padding: 6px 0;
 
   background: var(--accent);
 
@@ -701,6 +703,10 @@ section h2::after {
   font-weight: 700;
 
   text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   transform: rotate(45deg);
 
