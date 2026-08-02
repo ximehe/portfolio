@@ -885,7 +885,205 @@ section h2::after {
 
   color: var(--muted);
 }
+/* --------------------------- Journey / Timeline --------------------------- */
 
+#journey h2 {
+  text-align: center;
+}
+
+#journey h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#journey {
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 40px 0;
+}
+
+/* Línea central */
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: 50%;
+
+  width: 1px;
+
+  background: var(--accent);
+
+  transform: translateX(-50%) scaleY(0);
+
+  transform-origin: top;
+
+  opacity: 0;
+
+  transition:
+    transform 1.4s ease,
+    opacity 0.4s ease;
+}
+
+.reveal.visible .timeline::before {
+  transform: translateX(-50%) scaleY(1);
+
+  opacity: 0.45;
+}
+
+/* Evento */
+
+.timeline-item {
+  position: relative;
+
+  width: 50%;
+
+  padding: 0 40px 70px;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+
+  text-align: left;
+}
+
+/* Punto */
+
+.timeline-marker {
+  position: absolute;
+
+  top: 0;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: var(--background);
+
+  border: 2px solid var(--accent);
+
+  box-shadow:
+    0 0 12px rgba(56, 189, 248, 0.25);
+
+  z-index: 2;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.timeline-item:nth-child(odd) .timeline-marker {
+  right: -7px;
+}
+
+.timeline-item:nth-child(even) .timeline-marker {
+  left: -7px;
+}
+
+/* Contenido */
+
+.timeline-content {
+  max-width: 360px;
+
+  display: inline-block;
+
+  text-align: inherit;
+}
+
+.timeline-year {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--accent);
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+.timeline-type {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: var(--muted);
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+.timeline-content h3 {
+  margin: 0 0 6px;
+
+  font-size: 1.25rem;
+
+  color: var(--text);
+}
+
+.timeline-place {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+}
+
+.timeline-content p {
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.6;
+
+  font-size: 0.95rem;
+}
+
+/* Evento actual */
+
+.timeline-item.current .timeline-marker {
+  width: 18px;
+  height: 18px;
+
+  top: -2px;
+
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 15px rgba(56, 189, 248, 0.4),
+    0 0 30px rgba(56, 189, 248, 0.15);
+}
+
+.timeline-item.current .timeline-year {
+  text-shadow:
+    0 0 12px rgba(56, 189, 248, 0.3);
+}
 
 /* ------------------------ Contact ------------------------------------- */
 
@@ -1031,5 +1229,162 @@ footer {
   justify-content: center;
 }
 
+/* --------------------------- Journey / Timeline --------------------------- */
 
+#journey {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.timeline {
+  padding: 30px 0 20px;
+}
+
+/* Línea a la izquierda */
+
+.timeline::before {
+  left: 8px;
+
+  transform: none;
+}
+
+
+/* Todos los eventos pasan al mismo lado */
+
+.timeline-item,
+.timeline-item:nth-child(odd),
+.timeline-item:nth-child(even) {
+  width: 100%;
+
+  left: 0;
+
+  padding-left: 40px;
+  padding-right: 0;
+
+  padding-bottom: 55px;
+
+  text-align: left;
+}
+
+/* Punto */
+
+.timeline-item:nth-child(odd) .timeline-marker,
+.timeline-item:nth-child(even) .timeline-marker {
+  left: 1px;
+  right: auto;
+}
+
+/* Contenido */
+
+.timeline-content {
+  max-width: none;
+
+  display: block;
+}
+
+}
+/* --------------------------- Journey interactions --------------------------- */
+
+.timeline-content {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateY(-4px);
+}
+
+.timeline-item:hover .timeline-marker {
+  box-shadow:
+    0 0 15px rgba(56, 189, 248, 0.45),
+    0 0 30px rgba(56, 189, 248, 0.2);
+}
+
+.timeline-item:hover .timeline-content h3 {
+  color: var(--accent);
+}
+/* --------------------------- Journey animation --------------------------- */
+
+.timeline::before {
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
+
+  opacity: 0;
+
+  transition:
+    transform 1.4s ease,
+    opacity 0.4s ease;
+}
+
+.reveal.visible .timeline::before {
+  transform: translateX(-50%) scaleY(1);
+  opacity: 0.45;
+}
+
+.timeline-item {
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.visible .timeline-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.visible .timeline-item:nth-child(1) {
+  transition-delay: 0.3s;
+}
+
+.reveal.visible .timeline-item:nth-child(2) {
+  transition-delay: 0.6s;
+}
+
+.reveal.visible .timeline-item:nth-child(3) {
+  transition-delay: 0.9s;
+}
+
+.reveal.visible .timeline-item:nth-child(4) {
+  transition-delay: 1.2s;
+}
+
+@keyframes timelineMarkerPulse {
+  0% {
+    transform: scale(0.5);
+    box-shadow: 0 0 0 rgba(56, 189, 248, 0);
+  }
+
+  50% {
+    transform: scale(1.25);
+    box-shadow:
+      0 0 18px rgba(56, 189, 248, 0.45),
+      0 0 30px rgba(56, 189, 248, 0.2);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 12px rgba(56, 189, 248, 0.25);
+  }
+}
+
+.reveal.visible .timeline-item:nth-child(1) .timeline-marker {
+  animation: timelineMarkerPulse 0.6s ease 0.35s both;
+}
+
+.reveal.visible .timeline-item:nth-child(2) .timeline-marker {
+  animation: timelineMarkerPulse 0.6s ease 0.65s both;
+}
+
+.reveal.visible .timeline-item:nth-child(3) .timeline-marker {
+  animation: timelineMarkerPulse 0.6s ease 0.95s both;
+}
+
+.reveal.visible .timeline-item:nth-child(4) .timeline-marker {
+  animation: timelineMarkerPulse 0.6s ease 1.25s both;
 }
