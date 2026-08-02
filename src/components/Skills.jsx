@@ -57,11 +57,14 @@ function Skills() {
 
             <div className="skill-list">
 
-              {group.skills.map((skill) => (
-                <div
-                  className="skill-item"
-                  key={skill.name}
-                >
+              {group.skills.map((skill, index) => (
+              <div
+                className="skill-item"
+                key={skill.name}
+                style={{
+                  transitionDelay: `${index * 0.1}s`,
+                }}
+              >
 
                   <div className="skill-icon">
                     {skill.icon}
